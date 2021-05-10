@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+<webc-container controller="ExampleController" class="homepage">
+    <header>Medical Record Manager</header>
+
+    <form>
+        <div class="form-group">
+          <label for="medicalRecordTitle">Title</label>
+          <input type="text" class="form-control" id="medicalRecordTitle" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="patientName">Patient's name</label>
+          <input type="text" class="form-control" id="patientName" placeholder="Patient's name">
+        </div>
+        <div class="form-group">
+            <label for="doctorsName">Doctor's name</label>
+            <input type="text" class="form-control" id="doctorsName" placeholder="Doctor's name">
+        </div>
+        <div class="form-group">
+            <label for="diagnosis">Diagnosis</label>
+            <textarea class="form-control" id="diagnosis"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="treatment">Treatment</label>
+            <textarea class="form-control" id="treatment"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary">Add</button>
+    </form>
+
+    <section>
+        <p>Your Medical Records</p>
+
+        <div class="container">
+            <div class="row">
+                <div data-for="@records" data-tag="items">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ @title }}</h5>
+                        <div class="card-text">
+                            <p>Patient: {{ @patient }}</p>
+                            <p>Doctor: {{ @doctor }}</p>
+                        </div>
+                        </div>
+                    </div>
+                
+                    <div slot="no-data">{{ @no-data }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</webc-container>
